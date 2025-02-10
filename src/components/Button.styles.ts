@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-export type ButtonVariants = 'primary' | 'secondary' | 'danger';
+export type ButtonVariant = 'primary' | 'secondary' | 'danger';
 
 interface ButtonContainerProps {
-    variant: ButtonVariants;
+    $variant: ButtonVariant;
 }
 
 const buttonVariants = {
@@ -11,14 +11,15 @@ const buttonVariants = {
     secondary: 'pink',
     danger: 'red',
 }
-/* ${props => css`background-color: ${buttonVariants[props.variant]}`} */
+
 export const ButtonContainer = styled.button<ButtonContainerProps>`
     width: 100px;
     height: 40px;
+    border-radius: 4px;
     border: 0;
-    margin-right: 1rem;
+    margin: 1rem;
     
-
-    background-color: ${props => props.theme.primary}
-    
+    background: ${props => props.theme['green-700']};
+    color: ${props => props.theme.white};
+    border: ${props => buttonVariants[props.$variant]};
 `
