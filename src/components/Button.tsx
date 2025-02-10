@@ -1,7 +1,7 @@
-import { ButtonContainer, ButtonVariant } from "./Button.styles";
+import { ButtonContainer, ButtonVariants } from "./Button.styles";
 
 interface ButtonProps {
-    variant?: ButtonVariant;
+    variant?: ButtonVariants;
 }
 
 export function Button({ variant = 'primary' }: ButtonProps) {
